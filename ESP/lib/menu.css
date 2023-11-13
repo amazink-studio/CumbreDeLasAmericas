@@ -1,0 +1,160 @@
+nav {
+	top: 0;
+	position: fixed;
+	width: 100%;
+	z-index: 100;
+	background-color: #fffbf7;
+	border-bottom: solid 3px #A67FFF;
+	
+}
+.logo {
+	width: 185px;
+	margin: 1rem 2rem;
+}
+.idioma {
+	position: absolute;
+	float: right;
+	top: 0.6rem;
+	left: calc(185px + 1rem);
+	display: inline-block;
+	font-size: .8rem;
+	padding: 1rem;
+	
+	cursor: pointer;
+	
+}
+nav ul {
+	list-style: none;
+	overflow: hidden;
+}
+nav li a {
+	display: block;
+	margin: 0 3rem 20px;
+	text-align: right;
+	text-decoration: none;
+	font-size: 1.4rem;
+	color: #000000;
+}
+nav li a:hover, 
+nav li a:active,
+nav li a:after{
+	color: #ff6900;
+}
+nav li a.actual {
+	color: #FCE195;
+}
+nav .logo {
+	display: block;
+	float: left;
+	margin: 1rem 2rem;
+}
+/* menu */
+nav .menu {
+	clear: both;
+	max-height: 0;
+	transition: max-height .2s ease-out;
+}
+nav .menu .resaltado a {
+	color: #A67FFF;
+}
+nav .menu .resaltado a:hover {
+	color: #ff6900;
+}
+/* menu icono */
+nav .menu-icon {
+	cursor: pointer;
+	display: inline-block;
+	float: right;
+	padding: 28px 20px;
+	position: relative;
+	user-select: none;
+}
+nav .menu-icon .navicon {
+	background: #5e2a7e;
+	display: block;
+	height: 4px;
+	position: relative;
+	transition: background .2s ease-out;
+	width: 25px;
+}
+nav .menu-icon .navicon:before,
+nav .menu-icon .navicon:after {
+	background: #5e2a7e;
+	content: '';
+	display: block;
+	height: 100%;
+	position: absolute;
+	transition: all .2s ease-out;
+	width: 100%;
+}
+nav .menu-icon .navicon:before {
+	top: 7px;
+}
+nav .menu-icon .navicon:after {
+	top: -7px;
+}
+/* menu btn */
+nav .menu-btn {
+	display: none;
+}
+nav .menu-btn:checked ~ .menu {
+	max-height: 360px;
+}
+nav .menu-btn:checked ~ .menu-icon .navicon {
+	background: transparent;
+}
+nav .menu-btn:checked ~ .menu-icon .navicon:before {
+	transform: rotate(-45deg);
+}
+nav .menu-btn:checked ~ .menu-icon .navicon:after {
+	transform: rotate(45deg);
+}
+nav .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+nav .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+	top: 0;
+}
+
+/* Menu responsive */
+@media (min-width: 820px) {
+	nav {
+		position: sticky;
+		top: 2rem;
+		margin: 1rem auto;
+		width: 90%;
+		max-width: 1200px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		/*border: solid 1px #000000;	*/
+	}
+	nav ul {
+		display: flex;
+		align-items: center;
+	}
+	nav li {
+		display: flex;
+		align-items: center;
+	}
+	nav li a {
+		color: #000000;
+		margin: 0 0 0 0.5rem;
+		padding: 1rem;
+		font-weight: 700;
+		font-size: 1rem;
+		text-align: left;
+	}
+	nav li a.ultimo {
+		margin: 0 2rem 0 0.5rem;
+	}
+	nav li a.actual {
+		border-bottom: solid 1px #A67FFF;
+		color: #000000;
+	}
+	nav .menu {
+		clear: none;
+		max-height: none;
+	}
+	nav .menu-icon {
+		display: none;
+	}
+}

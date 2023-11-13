@@ -1,0 +1,337 @@
+/* ------ TEXTOS DESPLEGABLES ------ */
+.read-more-state {
+	display: none;
+}
+
+.read-more-target {
+	opacity: 0;
+	max-height: 0;
+	font-size: 0;
+	margin: 1rem 0 0;
+	transition: .25s ease;
+}
+
+.read-more-state:checked ~ .read-more-wrap .read-more-target {
+	opacity: 1;
+	font-size: inherit;
+	max-height: 999rem;
+	/* FONDO CAJAS DE TEXTO */
+	background-color: #baaeff;
+	padding: 2rem;
+	border-radius: 1rem;
+	margin: 1rem 0;
+}
+
+.read-more-state ~ .read-more-trigger:before {
+	content: 'Ver más +';
+}
+.read-more-state ~ .read-more-trigger-ENG:before {
+	content: 'View more +';
+}
+
+.read-more-state:checked ~ .read-more-trigger:before {
+	content: 'Ver menos -';
+}
+.read-more-state:checked ~ .read-more-trigger-ENG:before {
+	content: 'View less -';
+}
+
+.read-more-trigger,
+.read-more-trigger-ENG {
+	cursor: pointer;
+	display: block;
+	text-align: right;
+	/* COLOR TEXTO */
+	color: #FCE195;
+	font-weight: 700;
+	margin: 0;
+	padding: 0 0 0.5rem;
+	/* COLOR LÍNEA */
+	border-bottom: 2px solid #baaeff;
+}
+
+.read-more-trigger:hover,
+.read-more-trigger-ENG:hover {
+	/* COLOR TEXTO HOVER */
+	color: #FFFFFF;
+}
+
+#acciones .read-more-target {
+	margin: 0;
+}
+#acciones .read-more-state:checked ~ .read-more-wrap .read-more-target {
+	opacity: 1;
+	font-size: inherit;
+	max-height: 999rem;
+	/* FONDO CAJAS DE TEXTO */
+	background-color: #baaeff;
+	padding: 2rem;
+	border-radius: 0;
+	margin: 0;
+}
+#acciones .read-more-trigger,
+#acciones .read-more-trigger-ENG {
+	/* COLOR TEXTO */
+	color: #FCE195;
+	/* COLOR LÍNEA */
+	border-bottom: 2px solid #baaeff;
+}
+
+#acciones .read-more-trigger:hover,
+#acciones .read-more-trigger-ENG:hover {
+	/* COLOR TEXTO HOVER */
+	color: #000000;
+}
+
+/* -------- POPUP 1 ---------- */
+.overlay_flight_traveldil {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(164, 150, 224, 0.9);
+	transition: opacity 500ms;
+	visibility: hidden;
+	opacity: 0;
+	z-index: 300;
+}
+.overlay_flight_traveldil:target {
+	visibility: visible;
+	opacity: 1;
+}
+.popup_flight_travlDil {
+	margin: 30% auto;
+	padding: 3rem 1rem 1rem;
+	width: 70%;
+	max-width: 400px;
+	max-height: 60%;
+	overflow-x: scroll;
+	background: #fffbf7;
+	border: solid 16px #fffbf7;
+	border-radius: 20px;
+	transition: all 0.2s ease-in-out;
+}
+.popup_flight_travlDil .close_flight_travelDl {
+	position: sticky;
+	top: -3rem;
+	display: block;
+	background-color: #fffbf7;
+	padding: 0 0 1rem;
+	border-bottom: solid 3px #A67FFF;
+	
+	
+	transition: all 200ms;
+	font-size: 1.2rem;
+	font-weight: 700;
+	z-index: 22;
+}
+.content_flightht_travel_dil {
+	margin: 1rem 1rem 1rem;
+}
+.content_flightht_travel_dil p {
+	padding: 0 0 0.5rem;
+}
+@media (min-width: 900px) {
+	.popup_flight_travlDil {
+		margin: 15% auto;
+		padding: 2rem 2rem 2rem;
+		width: 80%;
+		max-width: 500px;
+		max-height: 60%;
+	}
+	.popup_flight_travlDil .close_flight_travelDl {
+		top: -2rem;
+		padding: 2rem 0 1rem;
+	}
+	.content_flightht_travel_dil {
+		margin: 3rem 1rem 1rem;
+	}
+}
+/* popup 2 - compartir */ 
+/* overlay_flight_traveldil = fondoPopUp 
+	 popup_flight_travlDil = cajaPopUp 
+	 close_flight_travelDl = cerrarPopUp 
+	 content_flightht_travel_dil = contenidoPopUp*/
+.fondoPopUp {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(92, 53, 128, 0.95);
+	transition: opacity 500ms;
+	visibility: hidden;
+	opacity: 0;
+	z-index: 300;
+}
+.fondoPopUp:target {
+	visibility: visible;
+	opacity: 1;
+}
+.cajaPopUp {
+	position: relative;
+	margin: 0 auto;
+	top: calc(50% - 250px);
+	width: 300px;
+	height: 500px;
+	overflow-x: scroll;
+	background: #fffbf7;
+	transition: all 0.2s ease-in-out;
+	box-shadow: 0 8px 16px 8px rgba(0, 0, 0, 0.2);
+}
+.cajaPopUp a.cerrarPopUp {
+	display: block;
+	text-align: right;
+
+	padding: 1rem;
+	
+	
+	transition: all 200ms;
+	font-size: 1.2rem;
+	font-weight: 700;
+	z-index: 22;
+}
+.cajaPopUp img {
+	max-width: 100%;
+	max-height: 100%;
+	width: 100%;
+}
+
+.contenidoPopUp {
+	
+}
+.contenidoPopUp p {
+	margin: 1rem;
+}
+.contenidoPopUp .btnCompartir {
+	margin: 1rem auto 0;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 0.5rem;
+	width: 200px;
+}
+.contenidoPopUp .btnCompartir p {
+	margin: 0;
+	justify-self: center;
+	align-self: center;
+	text-align: center;
+}
+.contenidoPopUp .btnCompartir p.txtCompartir {
+	grid-column: 1 / -1;
+	font-weight: 700;
+	justify-self: center;
+	align-self: center;
+}
+.contenidoPopUp .btnCompartir .FBbtn {
+	color: #3b5998;
+}
+.contenidoPopUp .btnCompartir .TWbtn {
+	color: #00acee;
+}
+.contenidoPopUp .btnCompartir .FBbtn:hover,
+.contenidoPopUp .btnCompartir .TWbtn:hover {
+	color: #A67FFF;
+}
+@media (min-width: 700px) {
+	.cajaPopUp {
+		top: calc(50% - 300px);
+		width: 600px;
+		height: 600px;
+	}
+	.contenidoPopUp {
+		padding: 0 50px;
+	}
+}
+@media (min-width: 1000px) {
+	.cajaPopUp {
+		top: calc(50% - 350px);
+		width: 700px;
+		height: 700px;
+	}
+	.contenidoPopUp {
+		padding: 0 50px;
+	}
+}
+/* Indicador de bajar */
+.contenedorScroll {
+	
+	display: none;
+	
+}
+.scroll div {
+	display: inline-block;
+	width: 70px;
+	padding: 40px 0 13px;
+	transform: translate(0, 0);
+	color: #FFFFFF;
+	background-color: rgba(164, 150, 224, .3);
+	-webkit-backdrop-filter: blur(5px);
+		backdrop-filter: blur(5px);
+	border-radius: 50%;
+	text-align: center;
+}
+.scroll {
+	margin: 2rem calc(50% - 35px);
+}
+
+.scroll div span {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 24px;
+	height: 24px;
+	margin-left: -12px;
+	border-left: 2px solid #FFFFFF;
+	border-bottom: 2px solid #FFFFFF;
+	transform: rotate(-45deg);
+	animation: animacionIndicadorScroll 2s infinite;
+	box-sizing: border-box;
+}
+@keyframes animacionIndicadorScroll {
+	0% {
+		transform: rotate(-45deg) translate(0, 0);
+	}
+	20% {
+		transform: rotate(-45deg) translate(-7px, 7px);
+	}
+	40% {
+		transform: rotate(-45deg) translate(0, 0);
+	}
+}
+@media (min-width: 600px) {
+	.contenedorScroll {
+		display: block;
+		bottom: 0;
+		z-index: 2;
+		margin: calc(-70px - 4rem) 0 0;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
